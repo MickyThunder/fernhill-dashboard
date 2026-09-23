@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-mist font-sans text-ink antialiased dark:bg-night dark:text-night-text;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-moss focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#A9D3BA] dark:focus-visible:ring-offset-night-surface;
+  }
+
+  .btn {
+    @apply focus-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-3.5 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-moss text-white hover:bg-moss-600;
+  }
+
+  .btn-secondary {
+    @apply border border-black/10 bg-white text-ink hover:bg-mist dark:border-night-border dark:bg-night-surface dark:text-night-text dark:hover:bg-white/5;
+  }
+
+  .btn-icon {
+    @apply focus-ring relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-ink/70 transition-colors hover:bg-black/5 hover:text-ink dark:text-night-muted dark:hover:bg-white/5 dark:hover:text-night-text;
+  }
+
+  .input {
+    @apply focus-ring w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/40 dark:border-night-border dark:bg-night dark:text-night-text dark:placeholder:text-night-muted;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium;
+  }
+
+  .muted {
+    @apply text-ink/60 dark:text-night-muted;
+  }
+}
