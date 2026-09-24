@@ -120,7 +120,12 @@ export default function App() {
           onNotify={setToast}
         />
 
-        <main id="main" tabIndex={-1} className="mx-auto max-w-7xl px-4 py-6 focus:outline-none sm:px-6 lg:px-8 lg:py-8">
+        <main
+          key={page}
+          id="main"
+          tabIndex={-1}
+          className="mx-auto max-w-7xl animate-page-in px-4 py-6 focus:outline-none sm:px-6 lg:px-8 lg:py-8"
+        >
           {page === 'dashboard' && (
             <DashboardPage
               orders={orders}

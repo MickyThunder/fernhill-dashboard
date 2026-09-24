@@ -19,6 +19,15 @@ export default {
           text: '#E4EAE5',
         },
       },
+      keyframes: {
+        'page-in': {
+          from: { opacity: '0', transform: 'translateY(6px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'page-in': 'page-in 220ms ease-out both',
+      },
       fontFamily: {
         display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif'],
